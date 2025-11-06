@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Air Quality Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>☁️ Real-time Air Quality Monitor</h1>
+        <p>Powered by ESP32 & Firebase</p>
+    </header>
+
+    <div class="container">
+
+        <div class="grid-container">
+            <div class="card" id="pm25-card">
+                <h2>PM2.5</h2>
+                <div class="gauge-container">
+                    <div class="gauge" id="pm25-gauge"></div>
+                    <div class="gauge-value" id="pm25-value">--</div>
+                    <div class="gauge-label">&micro;g/m&sup3;</div>
+                </div>
+                <div class="status-box" id="pm25-status">Loading...</div>
+            </div>
+
+            <div class="card" id="pm10-card">
+                <h2>PM10</h2>
+                <div class="gauge-container">
+                    <div class="gauge" id="pm10-gauge"></div>
+                    <div class="gauge-value" id="pm10-value">--</div>
+                    <div class="gauge-label">&micro;g/m&sup3;</div>
+                </div>
+                <div class="status-box" id="pm10-status">Loading...</div>
+            </div>
+
+            <div class="card">
+                <h2>Temperature</h2>
+                <div class="gauge-container">
+                    <div class="gauge" id="temp-gauge"></div>
+                    <div class="gauge-value" id="temp-value">--</div>
+                    <div class="gauge-label">&deg;C</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Humidity</h2>
+                <div class="gauge-container">
+                    <div class="gauge" id="hum-gauge"></div>
+                    <div class="gauge-value" id="hum-value">--</div>
+                    <div class="gauge-label">%</div>
+                </div>
+            </div>
+
+            <div class="card" id="co-card">
+                <h2>CO (Carbon Monoxide)</h2>
+                <div class="gauge-container">
+                    <div class="gauge" id="co-gauge"></div>
+                    <div class="gauge-value" id="co-value">--</div>
+                    <div class="gauge-label">ppm</div>
+                </div>
+                <div class="status-box" id="co-status">Loading...</div>
+            </div>
+
+            <div class="card" id="co2-card">
+                <h2>CO2 (Carbon Dioxide)</h2>
+                <div class="gauge-container">
+                    <div class="gauge" id="co2-gauge"></div>
+                    <div class="gauge-value" id="co2-value">--</div>
+                    <div class="gauge-label">ppm</div>
+                </div>
+                <div class="status-box" id="co2-status">Loading...</div>
+            </div>
+
+            <div class="card" id="no2-card">
+                <h2>NO2 (Nitrogen Dioxide)</h2>
+                <div class="gauge-container">
+                    <div class="gauge" id="no2-gauge"></div>
+                    <div class="gauge-value" id="no2-value">--</div>
+                    <div class="gauge-label">ppm</div>
+                </div>
+                <div class="status-box" id="no2-status">Loading...</div>
+            </div>
+        </div>
+
+        <div class="grid-container-charts">
+            <div class="card chart-card">
+                <h2>Pollution Trend (Last 30 readings)</h2>
+                <div class="chart-container">
+                    <canvas id="pollutionChart"></canvas>
+                </div>
+            </div>
+            <div class="card chart-card">
+                <h2>Temp & Humidity (Last 30 readings)</h2>
+                <div class="chart-container">
+                    <canvas id="envChart"></canvas>
+                </div>
+            </div>
+            <div class="card chart-card">
+                <h2>Gas Levels (Last 30 readings)</h2>
+                <div class="chart-container">
+                    <canvas id="gasChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div> 
+    <footer>
+        Last updated: <span id="last-updated">Never</span>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.4.0/justgage.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.1/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.1.0/dist/chartjs-adapter-luxon.min.js"></script>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+/* Basic Setup */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #0A2647; /* Dark Blue */
+    color: #ffffff;
+    padding: 20px 40px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+header p {
+    margin: 5px 0 0;
+    font-weight: 300;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Main Content Container */
+.container {
+    max-width: 1600px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Grid Layout for Cards */
+.grid-container, .grid-container-charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Individual Card Styling */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #0A2647; /* Dark Blue */
+    font-weight: 700;
+}
+
+/* Gauge Styling */
+.gauge-container {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    text-align: center;
+}
+.gauge {
+    width: 100%;
+    height: 200px;
+}
+.gauge-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1c1c1c;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+}
+.gauge-label {
+    font-size: 1rem;
+    color: #555;
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Status Box for AQI */
+.status-box {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 20px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+/* Chart Styling */
+.chart-card {
+    padding-bottom: 30px;
+}
+.chart-container {
+    position: relative;
+    height: 350px;
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 20px;
+}
